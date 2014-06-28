@@ -48,7 +48,7 @@ public class JwtBuilder {
         claims.setAud(AUDIENCE);
         claims.setIss(ISSUER);
         claims.setIat(System.currentTimeMillis() / 1000L);
-        claims.setExp(claims.getIat() + TOKEN_EXPIRY_TIME * 1000L);
+        claims.setExp(claims.getIat() + TOKEN_EXPIRY_TIME * 60L);
         String claimsJsonString = gson.toJson(claims);
         token.append(Base64.encodeBase64URLSafeString(claimsJsonString.getBytes("UTF-8")));
         
