@@ -5,6 +5,6 @@ released: 2014-06-03
 # JWT Configuration
 jwtConfig:
   privateKey: secretstring
-  audience: http://ORCA-ROOT-URL
-  issuer: 3MVG99OxTyEMC.BoSVPGZHQukXnV
-  expiryTime: 20 # minutes
+  audience: http://ROOT-URL
+  issuer: http://ROOT-URL
+  expiryInMinutes: 20 # minutes

@@ -3,13 +3,12 @@ package com.htakemoto;
 import java.security.SignatureException;
 import java.util.Map;
 
-import com.htakemoto.jwt.MyJWTVerifier;
-import com.htakemoto.jwt.JwtBuilder;
 import com.htakemoto.jwt.JwtClaims;
+import com.htakemoto.jwt.JwtUtil;
 import com.htakemoto.yaml.Config;
 
-public class Application
-{
+public class Application {
+	
     public static void main(String[] args) throws Exception {
         
         // Test for YAML
@@ -22,14 +21,14 @@ public class Application
         
         // Encode JWT
         System.out.println("###### Encode JWT ######");
-        String jwt = JwtBuilder.generateJWT(jwtClamis);
+        String jwt = JwtUtil.generateJWT(jwtClamis);
         System.out.println("JWT      " + jwt);
         
         // Decode JWT
         System.out.println("###### Decode JWT ######");
         try {
             // Decode with verification of Token
-            Map<String,Object> decodedPayload = new MyJWTVerifier().verify(jwt);
+            Map<String,Object> decodedPayload = new JwtUtil().verify(jwt);
             // Check expiry date
             if (decodedPayload.get("exp") != null &&
                     ((Integer)decodedPayload.get("exp") >= (System.currentTimeMillis() / 1000L))) {

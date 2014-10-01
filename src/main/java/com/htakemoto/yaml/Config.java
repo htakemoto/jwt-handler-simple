@@ -4,8 +4,8 @@ import java.io.InputStream;
 
 import org.yaml.snakeyaml.Yaml;
 
-public class Config
-{
+public class Config {
+	
     private static ConfigRoot configRoot = new ConfigRoot();
     
     static {

@@ -3,8 +3,8 @@ package com.htakemoto.jwt;
 import lombok.Data;
 
 @Data
-public class JwtClaims
-{
+public class JwtClaims {
+	
     private String iss;
     private long iat;
     private long exp;
