@@ -27,8 +27,8 @@ public class JwtUtil {
     private static final String ISSUER = Config.getConfigRoot().getJwtConfig().getIssuer();
     private static final long TOKEN_EXPIRY_TIME = Config.getConfigRoot().getJwtConfig().getExpiryInMinutes();
     
-
-	private static ObjectMapper mapper = new ObjectMapper();
+    
+    private static ObjectMapper mapper = new ObjectMapper();
 	
     /**
      * JWT Generator
