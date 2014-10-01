@@ -16,12 +16,12 @@ public class Application {
         System.out.println("Released " + Config.getConfigRoot().getReleased());
         
         // set custom value(s) into jwt
-        JwtClaims jwtClamis = new JwtClaims();
-        jwtClamis.setUsr("takemohi");
+        JwtClaims jwtClaims = new JwtClaims();
+        jwtClaims.setUsr("takemohi");
         
         // Encode JWT
         System.out.println("###### Encode JWT ######");
-        String jwt = JwtUtil.generateJWT(jwtClamis);
+        String jwt = JwtUtil.generateJWT(jwtClaims);
         System.out.println("JWT      " + jwt);
         
         // Decode JWT
