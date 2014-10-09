@@ -95,7 +95,7 @@ public class JwtUtil {
      * @throws InvalidKeyException 
      */
     
-    public Map<String, Object> verify(String token) throws InvalidKeyException, NoSuchAlgorithmException, IllegalStateException, SignatureException, IOException {
+    public static Map<String, Object> verify(String token) throws InvalidKeyException, NoSuchAlgorithmException, IllegalStateException, SignatureException, IOException {
     	return new JWTVerifier(PRIVATE_KEY, AUDIENCE, ISSUER).verify(token);
     }
 }

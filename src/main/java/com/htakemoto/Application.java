@@ -28,7 +28,7 @@ public class Application {
         System.out.println("###### Decode JWT ######");
         try {
             // Decode with verification of Token
-            Map<String,Object> decodedPayload = new JwtUtil().verify(jwt);
+            Map<String,Object> decodedPayload = JwtUtil.verify(jwt);
             // Check expiry date
             if (decodedPayload.get("exp") != null &&
                     ((Integer)decodedPayload.get("exp") >= (System.currentTimeMillis() / 1000L))) {
